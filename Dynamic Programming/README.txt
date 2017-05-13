@@ -19,8 +19,8 @@ Answer: dp[0][n]
 There is a building of n floors. If an egg drops from the k th floor or above, it will break. If it's dropped from any floor below, it will not break.
 You're given m eggs, Find k while minimize the number of drops for the worst case. Return the number of drops in the worst case.
 
-dp[n+1][m+1]
-State: dp[i][j] times you need to decide the floor at i floors and j eggs
-Function: dp[i][j]=min(1+max(dp[k-1][j-1],dp[i-k,j]))// dp[k-1][j-1]:egg is broken; dp[i-k,j]: egg is not broken.
-Intialize: dp[i][1]=i; dp[1][j]=1;
-Answer: dp[n][m]
+dp[m+1][n+1]
+State: dp[i][j] times you need to decide the floor at i eggs and j floors
+Function: dp[i][j]=min(1+max(dp[i-1][k-1],dp[i,j-k]))// dp[i-1][k-1]:egg is broken; dp[i,j-k]: egg is not broken.
+Intialize: dp[1][i]=i; dp[i][1]=1;dp[i][0]=0;
+Answer: dp[m][n]
