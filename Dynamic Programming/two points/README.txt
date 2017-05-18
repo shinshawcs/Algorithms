@@ -16,4 +16,8 @@ int[] dp=new int[n];
 dp[i]=Math.min(dp[j]+1,dp[i]) if(dp[j]!=Integer.MAX_VALUE&&j+A[j]>=i); (j<i)
 
 Three Points solution:
+We use "last" to keep track of the maximum distance that has been reached
+by using the minimum steps "res", whereas "cur" is the maximum distance
+that can be reached by using "ret+1" steps. Thus,
+cur = max(i+A[i]) where 0 <= i <= last.
 int cur,last,minstep=0;
