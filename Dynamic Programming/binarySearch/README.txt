@@ -40,3 +40,4 @@ static class myComparator implements Comparator<int[]>{
 		return max;
 	}
   }
+Optimize: binary search O(nlogn)
